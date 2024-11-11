@@ -265,22 +265,12 @@ function updateJSONEditorSelection(selectionBuffer, jsonEditor)
             jsonEditor.collapse([], true);
             jsonEditor.expand(elemPath, () => true);
             jsonEditor.scrollTo(elemPath);
-            jsonEditor.select({
-                type: "multi",
-                anchorPath: elemPath,
-                focusPath: elemPath
-            });
-
         }
     }
     else
     {
         //Expand all, deselect all, scroll to top
         jsonEditor.expand([], () => true);
-        jsonEditor.select({
-            type: "key",
-            path: []
-        });
         jsonEditor.scrollTo([]);
     }
 }
